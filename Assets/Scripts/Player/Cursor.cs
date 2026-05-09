@@ -1,9 +1,9 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Cursor : MonoBehaviour
-
 {
     public Player play_character;
     
