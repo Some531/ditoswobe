@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2714013103590020271}
   - component: {fileID: 1572302882399073310}
   - component: {fileID: 6161815807177839783}
+  - component: {fileID: 208541133156695498}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -138,3 +139,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16395575, y: 3.2}
   m_EdgeRadius: 0
+--- !u!114 &208541133156695498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225848180091409291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd23d3c0f9dbe0c499116d1b1f928546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tree
