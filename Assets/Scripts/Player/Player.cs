@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     Rigidbody2D rb;
     float thrust = 50f;
-    float detection_distance = 100f;
+    float detection_distance = 10f;
     Vector2 mouse_world_pos = Vector2.zero;   
     Vector2 direction;
     Vector2 player_position;
