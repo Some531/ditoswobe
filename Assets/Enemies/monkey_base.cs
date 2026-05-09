@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +11,17 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
     public SpriteRenderer sp;
     public float patrolDistance;
-
-
+    public float kill_speed;
+    Player player_character;
+    Rigidbody2D player_body;
+    static public List<GameObject> dead_enemies = new List<GameObject>();
 
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
         startPos = transform.position;
+        player_character = FindAnyObjectByType<Player>();
+        player_body = player_character.GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -46,7 +52,21 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Death()
     {
-        Destroy(gameObject);
+        dead_enemies.Add(gameObject);
+        gameObject.SetActive(false);
     }
 
+    static public void Respawn(GameObject enemy)
+    {
+        enemy.SetActive(true);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (player_body.GetPointVelocity(transform.position).magnitude > kill_speed)
+        {
+            player_character.ReflectVertical();
+            Death();
+        }
+    }
 }

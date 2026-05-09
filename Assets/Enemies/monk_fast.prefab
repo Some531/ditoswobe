@@ -108,3 +108,4 @@ MonoBehaviour:
   moveSpeed: 0.14
   sp: {fileID: 8503250471755124831}
   patrolDistance: 2
+  kill_speed: 4
