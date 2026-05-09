@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door2 : MonoBehaviour
+public class DishDoor : MonoBehaviour
 {
     public Sprite door_0;
     public Sprite door_1;
