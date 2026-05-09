@@ -8,6 +8,6 @@ public class MainMenuHandler : MonoBehaviour
     public void OnButtonClicked()
     {
         Debug.Log("Button clicked! Using: " + menuSwitch.name);
-        SceneManager.LoadScene("SampleScene 1"); 
+        SceneManager.LoadScene("Level 1"); 
     }
 }   
