@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 15e1c82da861446c9a6be182f6becbd8
+guid: 8b35aee4839359d478a1354049d4bc09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6853316077166303748
-    second: Tree_0
+      213: 4705881847378730582
+    second: stump_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree_0
+      name: stump_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 128
-        height: 320
+        width: 49
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40a98f869aedb1f50800000000000000
-      internalID: 6853316077166303748
+      spriteID: 65ed7fb7b96ae4140800000000000000
+      internalID: 4705881847378730582
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tree_0: 6853316077166303748
+      stump_0: 4705881847378730582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
