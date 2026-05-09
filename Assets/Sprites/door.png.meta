@@ -51,11 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
   spritePixelsToUnits: 16
-=======
-  spritePixelsToUnits: 32
->>>>>>> Stashed changes
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,24 +117,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-<<<<<<< Updated upstream
         y: 64
         width: 70
         height: 64
       alignment: 9
-      pivot: {x: 0.64285713, y: 0.5}
-=======
-<<<<<<<< Updated upstream:Assets/Sprites/open_door.png.meta
-        y: 0
-        width: 75
-========
-        y: 64
-        width: 70
->>>>>>>> Stashed changes:Assets/Sprites/door.png.meta
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
->>>>>>> Stashed changes
+      pivot: {x: 0.6571429, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,26 +142,16 @@ TextureImporter:
         y: 0
         width: 70
         height: 64
-<<<<<<< Updated upstream
       alignment: 9
-      pivot: {x: 43, y: 32}
-=======
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
->>>>>>> Stashed changes
+      pivot: {x: 0.6571429, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< Updated upstream
-      spriteID: 023126a74012b754e862e0794457336a
-      internalID: -102017450
-=======
-      spriteID: a451094e943cc3c41b74511f3a954554
-      internalID: -1505449595
->>>>>>> Stashed changes
+      spriteID: f54522ba831c09b48a7afc12cb579035
+      internalID: 636614567
       vertices: []
       indices: 
       edges: []
@@ -187,11 +160,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< Updated upstream
-    spriteID: df84e669462b2364c8bbc7a5cf657f2d
-=======
-    spriteID: ad17136d134db8f47b45a8cf9325b3c1
->>>>>>> Stashed changes
+    spriteID: b4734519a55019c4884d7635647212e8
     internalID: 0
     vertices: []
     indices: 
@@ -200,21 +169,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
-<<<<<<< Updated upstream
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":70.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":43.0,"y":32.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":70.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6428571343421936,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       door_0: -7341407202210888751
-      door_1: -102017450
-=======
-      - key: SpriteEditor.SliceOnImport
-        value: False
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":70.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
-    nameFileIdTable:
-      door_0: -7341407202210888751
-      door_1: -1505449595
->>>>>>> Stashed changes
+      door_1: 636614567
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
