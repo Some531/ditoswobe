@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         startPos = transform.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
         
