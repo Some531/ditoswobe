@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(LineRenderer))]
 public class GrappleLine : MonoBehaviour
@@ -26,9 +27,9 @@ public class GrappleLine : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (origin != null && player_character.is_grapple)
+        if (origin != null && Mouse.current.leftButton.isPressed && player_character.is_grapple)
         {
             lineRenderer.SetPosition(0, origin.position);
             lineRenderer.SetPosition(1, grapple.position);

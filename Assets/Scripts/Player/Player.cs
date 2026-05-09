@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         player_position = transform.position;
 
@@ -63,7 +63,10 @@ public class Player : MonoBehaviour
         }
 
         rel_position = new Vector2(grapple_position.x - player_position.x, grapple_position.y - player_position.y).normalized;
+    }
 
+    void FixedUpdate()
+    {
         if (Mouse.current != null && Mouse.current.leftButton.isPressed && grappleHit)
         {
             rb.AddForce(rel_position * thrust);
