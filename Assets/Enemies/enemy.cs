@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-
+    public Vector2 startPos; 
     public float moveSpeed;
     public SpriteRenderer sp;
-    public float patrolDistance = 3;
+    public float patrolDistance;
 
-    public Vector2 startPos; 
 
 
     private void Start()
@@ -30,9 +29,6 @@ public class Enemy : MonoBehaviour
     {
         float currentX = transform.position.x;
          
-        float time = Mathf.PingPong(Time.time * moveSpeed, 1);
-        
-        // 4. Lerp between minX and maxX based on time
         float newX = currentX + moveSpeed;
         
         // 5. Update position
