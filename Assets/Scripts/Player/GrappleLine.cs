@@ -16,6 +16,7 @@ public class GrappleLine : MonoBehaviour
         lineRenderer.startWidth = 0.05f;
         lineRenderer.endWidth = 0.05f;
         lineRenderer.useWorldSpace = true;
+        play_character = FindAnyObjectByType<Player>();
 
         if (lineRenderer.material == null)
         {
