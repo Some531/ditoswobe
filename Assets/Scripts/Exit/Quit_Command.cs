@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Quit_Command : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class Quit_Command : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            
         }
     }
 }
