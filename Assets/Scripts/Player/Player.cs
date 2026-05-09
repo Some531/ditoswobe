@@ -1,0 +1,72 @@
+using System;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class Player : MonoBehaviour
+{
+    [SerializeField] public Camera main_camera;
+    RaycastHit2D grappleHit;  
+    public Vector2 rel_position;
+    public Vector2 grapple_position;
+    public bool is_grapple = false;
+    [SerializeField] LayerMask layerMask;
+    Rigidbody2D rb;
+    float thrust = 50f;
+    float detection_distance = 100f;
+    Vector2 mouse_world_pos = Vector2.zero;   
+    Vector2 direction;
+    Vector3 player_position;
+    Vector2 mouse_pixel_pos;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        player_position = transform.position;
+
+        Debug.DrawRay(player_position, rel_position * thrust);
+        
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+
+            player_position = transform.position;
+
+            mouse_pixel_pos = Mouse.current.position.ReadValue();
+
+            mouse_world_pos = Camera.main.ScreenToWorldPoint(new Vector3(mouse_pixel_pos.x, mouse_pixel_pos.y, 0));
+
+            direction = new Vector2(mouse_world_pos.x - player_position.x, mouse_world_pos.y - player_position.y).normalized;
+
+            grappleHit = Physics2D.Raycast(transform.position, direction, detection_distance, layerMask);
+
+            if (grappleHit)
+            {
+                is_grapple = true;
+
+                grapple_position = grappleHit.point;
+            }
+            else
+            {
+                is_grapple = false;
+            }
+        }
+
+        rel_position = new Vector2(grapple_position.x - player_position.x, grapple_position.y - player_position.y).normalized;
+
+        if (Mouse.current != null && Mouse.current.leftButton.isPressed && grappleHit)
+        {
+            rb.AddForce(rel_position * thrust);
+        }
+    }
+}
