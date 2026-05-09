@@ -11,9 +11,11 @@ public class Player : MonoBehaviour
     public Vector2 grapple_position;
     public bool is_grapple = false;
     [SerializeField] LayerMask layerMask;
+
+    public float thrust = 50f;
+    public float detection_distance = 20f;
+    public float bounce = 2f;
     Rigidbody2D rb;
-    float thrust = 50f;
-    float detection_distance = 10f;
     Vector2 mouse_world_pos = Vector2.zero;   
     Vector2 direction;
     Vector2 player_position;
@@ -78,7 +80,7 @@ public class Player : MonoBehaviour
     {
         if (rb.linearVelocityY < 0)
         {
-            rb.linearVelocityY *= -1;
+            rb.linearVelocityY = -rb.linearVelocityY + bounce;
         }
     }
 
@@ -87,6 +89,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("hazard"))
         {
             Respawn();
+            foreach (GameObject enemy in Enemy.dead_enemies)
+            {
+                Enemy.Respawn(enemy);
+            }
+            foreach (GameObject enemy in Enemy_proj.dead_enemies)
+            {
+                Enemy_proj.Respawn(enemy);
+            }
         }
     }
 

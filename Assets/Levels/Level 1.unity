@@ -1749,6 +1749,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
+  thrust: 50
+  detection_distance: 20
+  bounce: 2
 --- !u!61 &424249009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3338,7 +3341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2556dc2bd2e95489be6c973787f73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrappleLine
-  player_character: {fileID: 424249008}
+  play_character: {fileID: 424249008}
   origin: {fileID: 424249012}
   grapple: {fileID: 2048912917}
 --- !u!120 &1664971370
