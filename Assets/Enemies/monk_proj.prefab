@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1165179333368705274}
   - component: {fileID: 3675260242648832724}
-  - component: {fileID: 2897981423107674524}
   - component: {fileID: 5294516475625441724}
+  - component: {fileID: 5418788251265210254}
   m_Layer: 2
   m_Name: monk_proj
   m_TagString: Untagged
@@ -93,26 +93,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2897981423107674524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6998438469530235983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ae717a757a04895b29249b359e1f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy_fast
-  startPos: {x: 0, y: 0}
-  moveSpeed: 0.035
-  sp: {fileID: 0}
-  patrolDistance: 2
-  kill_speed: 0
-  proj_range: 4
-  proj_time: 2.5
-  bullet_pre: {fileID: 8519518444582026145, guid: 3a250622d38c6ab47a18b0bc6086e5ed, type: 3}
 --- !u!61 &5294516475625441724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,3 +139,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4375, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &5418788251265210254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998438469530235983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ae717a757a04895b29249b359e1f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy_proj
+  startPos: {x: 0, y: 0}
+  moveSpeed: 0.035
+  sp: {fileID: 0}
+  patrolDistance: 2
+  kill_speed: 2
+  proj_range: 5
+  proj_time: 2
+  bullet_pre: {fileID: 8519518444582026145, guid: 3a250622d38c6ab47a18b0bc6086e5ed, type: 3}
