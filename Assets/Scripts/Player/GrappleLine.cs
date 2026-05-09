@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class GrappleLine : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     public Player player_character;
     public Transform origin;
     public Transform grapple;
@@ -33,6 +32,11 @@ public class GrappleLine : MonoBehaviour
         {
             lineRenderer.SetPosition(0, origin.position);
             lineRenderer.SetPosition(1, grapple.position);
+            lineRenderer.enabled = true;
+        }
+        else
+        {
+            lineRenderer.enabled = false;
         }
     }
 }
