@@ -10,9 +10,14 @@ public class Enemy_proj : MonoBehaviour
     public SpriteRenderer sp;
     public float patrolDistance;
     public float kill_speed;
+    public float proj_range = 3f;
+    public float proj_time = 2f;
+    float shoot_time = 0f;
+    Vector2 rel_position;
     Player player_character;
     Rigidbody2D player_body;
     static public List<GameObject> dead_enemies = new List<GameObject>();
+    public GameObject bullet_pre;
 
     private void Start()
     {
@@ -25,7 +30,25 @@ public class Enemy_proj : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        
+    }
+
+    void Update()
+    {
+        rel_position = new Vector2(player_character.transform.position.x - transform.position.x, 
+                                   player_character.transform.position.y - transform.position.y);
+        if (shoot_time > 0)
+        {
+            shoot_time -= Time.deltaTime;
+        }
+        else
+        {
+            if (rel_position.magnitude <= proj_range)
+            {
+                Debug.Log("Bang");
+                Shoot();
+                shoot_time = proj_time;
+            }
+        }
     }
 
 
@@ -66,5 +89,10 @@ public class Enemy_proj : MonoBehaviour
             player_character.ReflectVertical();
             Death();
         }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bullet_pre, transform.position, Quaternion.FromToRotation(Vector2.up, rel_position));
     }
 }

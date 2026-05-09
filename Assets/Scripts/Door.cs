@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door2 : MonoBehaviour
 {
     public Sprite door_0;
     public Sprite door_1;
@@ -8,12 +8,17 @@ public class Door : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isOpen = false;
     
-    void Start()
+    public void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
-    void SetState(isOpen)
+    public void Update()
+    {
+        
+    }
+
+    public void SetState(bool isOpen)
     {
         if (isOpen)
         {
