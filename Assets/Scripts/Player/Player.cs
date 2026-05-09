@@ -16,8 +16,9 @@ public class Player : MonoBehaviour
     float detection_distance = 100f;
     Vector2 mouse_world_pos = Vector2.zero;   
     Vector2 direction;
-    Vector3 player_position;
+    Vector2 player_position;
     Vector2 mouse_pixel_pos;
+    Vector2 initial_position;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        initial_position = transform.position;
     }
 
     // Update is called once per frame
@@ -72,4 +73,28 @@ public class Player : MonoBehaviour
             rb.AddForce(rel_position * thrust);
         }
     }
+
+    public void ReflectVertical()
+    {
+        if (rb.linearVelocityY < 0)
+        {
+            rb.linearVelocityY *= -1;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("hazard"))
+        {
+            Respawn();
+        }
+    }
+
+    void Respawn()
+    {
+        rb.linearVelocity = Vector2.zero;
+        transform.position = initial_position;
+    }
+
+
 }
