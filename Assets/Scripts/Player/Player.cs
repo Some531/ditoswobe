@@ -21,13 +21,15 @@ public class Player : MonoBehaviour
     Vector2 player_position;
     Vector2 mouse_pixel_pos;
     Vector2 initial_position;
-    Key key;
+    Key class_key;
+    GameObject key;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        key = GameObject.FindAnyObjectByType<Key>();
+        class_key = FindAnyObjectByType<Key>();
+        key = class_key.GetComponent<GameObject>();
     }
 
     void Start()
@@ -111,7 +113,7 @@ public class Player : MonoBehaviour
 
     void KeyRespawn()
     {
-        key.isOpen = false;
+        class_key.isOpen = false;
         key.SetActive(true);
     }
 }

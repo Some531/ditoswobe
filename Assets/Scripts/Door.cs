@@ -9,28 +9,34 @@ public class Door : MonoBehaviour
 
     Player player_character;
     Rigidbody2D player_body;
+    //GameObject key;
+    //Key class_key;
     Key key;
+    int lvl_num = 1;
     
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
 
-        key = GameObject.FindAnyObjectByType<Key>();
+        //key = class_key.GetComponent<GameObject>();
+        key = FindAnyObjectByType<Key>();
         player_character = FindAnyObjectByType<Player>();
         player_body = player_character.GetComponent<Rigidbody2D>();
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //if (class_key.isOpen)
         if (key.isOpen)
         {
+            lvl_num++;
             SceneManager.LoadScene($"Level {lvl_num}");
-            
         }
     }
 
     public void OpenDoor()
     {
+        //if (class_key.isOpen)
         if (key.isOpen)
         {
             sp.sprite = door_1;
