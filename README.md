@@ -5,15 +5,11 @@ you have been reconstructed into a cyborg creature. One capable of saving the ju
 Can you reach and defeat the mastermind behind this **_brainrotted_** invasion?
 
 
-Installation & Setup: Provide specific commands to clone the repository and install dependencies. 
-For example, use npm install for Node.js projects or specify how to open the project in Unity. 
+Installation & Setup: 
+Install unity, clone the repo with github, easier with github desktop. 
 
-Install unity, 
-Clone the repo with github, easier with github desktop. Then you are able to play the game by opening up Asset/Start Menu/Main Menu
+How to Run: 
+Then you are able to play the game by opening up Asset/Levels/0
 
-
-
-How to Run: Include distinct sections for different operating systems if necessary (e.g., npm start for Windows vs. npm run osx for macOS/Linux). 
-
-
-How to Play: Explain the controls, objectives, and mechanics so users can engage with the game immediately.
+How to Play: 
+All explained in the first level with tutorial pop up.
