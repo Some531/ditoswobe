@@ -21,15 +21,13 @@ public class Player : MonoBehaviour
     Vector2 player_position;
     Vector2 mouse_pixel_pos;
     Vector2 initial_position;
-    Key class_key;
-    GameObject key;
+    public Key class_key;
+    public bool isOpen = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        class_key = FindAnyObjectByType<Key>();
-        key = class_key.GetComponent<GameObject>();
     }
 
     void Start()
@@ -101,7 +99,10 @@ public class Player : MonoBehaviour
             {
                 Enemy_proj.Respawn(enemy);
             }
-            KeyRespawn();
+            if (isOpen)
+            {
+                KeyRespawn();
+            }
         }
     }
 
@@ -113,7 +114,10 @@ public class Player : MonoBehaviour
 
     void KeyRespawn()
     {
+        isOpen = false;
         class_key.isOpen = false;
-        key.SetActive(true);
+        class_key.GetComponent<SpriteRenderer>().enabled = true;
+        class_key.GetComponent<Collider2D>().enabled = true;
     }
+
 }

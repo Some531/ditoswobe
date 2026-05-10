@@ -7,6 +7,6 @@ public class MainMenuHandler : MonoBehaviour
 
     public void OnButtonClicked()
     {
-        SceneManager.LoadScene("Level 1"); 
+        SceneManager.LoadScene("1"); 
     }
 }   

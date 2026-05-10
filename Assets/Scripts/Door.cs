@@ -3,43 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    Sprite door_0;
-    Sprite door_1;
+    public Sprite door_0;
+    public Sprite door_1;
+    public Key class_key;
+
     SpriteRenderer sp;
 
-    Player player_character;
-    Rigidbody2D player_body;
-    GameObject key;
-    Key class_key;
-    int lvl_num = 1;
-    
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
-
-        key = class_key.GetComponent<GameObject>();
-        player_character = FindAnyObjectByType<Player>();
-        player_body = player_character.GetComponent<Rigidbody2D>();
     }
-    
-    void OnCollisionEnter2D(Collision2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!collision.CompareTag("Player")) return;
+
         if (class_key.isOpen)
         {
-            lvl_num ++;
-            SceneManager.LoadScene($"Level {lvl_num}");
+            int nextLevel = int.Parse(SceneManager.GetActiveScene().name) + 1;
+            SceneManager.LoadScene(nextLevel.ToString());
         }
     }
 
     public void OpenDoor()
     {
-        if (class_key.isOpen)
-        {
-            sp.sprite = door_1;
-        }
-        else
-        {
-            sp.sprite = door_0;
-        }
+        sp.sprite = class_key.isOpen ? door_1 : door_0;
     }
 }

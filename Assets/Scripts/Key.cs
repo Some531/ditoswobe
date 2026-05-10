@@ -1,28 +1,32 @@
-using System;
 using UnityEngine;
 
 public class Key : MonoBehaviour
 {
     public bool isOpen;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    Player player_character;
-    Rigidbody2D player_body;
     Door door;
 
     void Start()
     {
         isOpen = false;
-
-        door = GameObject.FindAnyObjectByType<Door>();
-        player_character = FindAnyObjectByType<Player>();
-        player_body = player_character.GetComponent<Rigidbody2D>();
+        door = FindAnyObjectByType<Door>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("kachink");
+        if (!collision.CompareTag("Player")) return;
+
+        Debug.Log("Key collected!");
         isOpen = true;
         gameObject.SetActive(false);
         door.OpenDoor();
     }
+
+    public void Respawn()
+    {
+        isOpen = false;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
+    }
+
+
 }
