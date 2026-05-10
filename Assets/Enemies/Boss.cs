@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Boss : MonoBehaviour
         //bdy_player = obj_player.GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocityX = speed;
+        obj_player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -72,11 +74,19 @@ public class Boss : MonoBehaviour
             rb.linearVelocityX = speed;
             sp.flipX = !sp.flipX;
         }
+
         if (initial_position.x + patrol_distance <= transform.position.x)
         {
             rb.linearVelocityX = -speed;
             sp.flipX = !sp.flipX;
         }
+
+        if (health <= 0)
+        {
+            int nextLevel = int.Parse(SceneManager.GetActiveScene().name) + 1;
+            SceneManager.LoadScene(nextLevel.ToString());
+        }
+
     }
 
     void Jump()
