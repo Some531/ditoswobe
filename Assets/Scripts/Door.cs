@@ -1,32 +1,45 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DishDoor : MonoBehaviour
+public class Door : MonoBehaviour
 {
-    public Sprite door_0;
-    public Sprite door_1;
+    Sprite door_0;
+    Sprite door_1;
+    SpriteRenderer sp;
 
-    private SpriteRenderer spriteRenderer;
-    private bool isOpen = false;
+    Player player_character;
+    Rigidbody2D player_body;
+    GameObject key;
+    Key class_key;
+    int lvl_num = 1;
     
-    public void Start()
+    void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        sp = GetComponent<SpriteRenderer>();
+
+        key = class_key.GetComponent<GameObject>();
+        player_character = FindAnyObjectByType<Player>();
+        player_body = player_character.GetComponent<Rigidbody2D>();
     }
     
-    public void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    public void SetState(bool isOpen)
-    {
-        if (isOpen)
+        if (class_key.isOpen)
         {
-            spriteRenderer.sprite = door_1;
+            lvl_num ++;
+            SceneManager.LoadScene($"Level {lvl_num}");
+        }
+    }
+
+    public void OpenDoor()
+    {
+        if (class_key.isOpen)
+        {
+            sp.sprite = door_1;
         }
         else
         {
-            spriteRenderer.sprite = door_0;
+            sp.sprite = door_0;
         }
     }
 }
