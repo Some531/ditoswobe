@@ -44,7 +44,6 @@ public class Enemy_proj : MonoBehaviour
         {
             if (rel_position.magnitude <= proj_range)
             {
-                Debug.Log("Bang");
                 Shoot();
                 shoot_time = proj_time;
             }
@@ -84,7 +83,7 @@ public class Enemy_proj : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (player_body.GetPointVelocity(transform.position).magnitude > kill_speed)
+        if (player_body.linearVelocity.magnitude > kill_speed)
         {
             player_character.ReflectVertical();
             Death();

@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (player_body.GetPointVelocity(transform.position).magnitude > kill_speed)
+        if (player_body.linearVelocity.magnitude > kill_speed)
         {
             player_character.ReflectVertical();
             Death();
