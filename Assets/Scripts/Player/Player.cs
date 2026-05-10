@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
     Vector2 initial_position;
     public Key class_key;
     public bool isOpen = false;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +33,6 @@ public class Player : MonoBehaviour
         initial_position = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         player_position = transform.position;
