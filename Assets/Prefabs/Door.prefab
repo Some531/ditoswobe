@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8676956159333028843}
   - component: {fileID: 441018528411260663}
   - component: {fileID: 8717718179921799936}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,5 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f167a34cf13b1e044a815860cf9fe5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DishDoor
-  door_0: {fileID: 0}
-  door_1: {fileID: 0}
+  door_0: {fileID: -7341407202210888751, guid: b06fcb97c8425384f93622988ea8dcdb, type: 3}
+  door_1: {fileID: 636614567, guid: b06fcb97c8425384f93622988ea8dcdb, type: 3}

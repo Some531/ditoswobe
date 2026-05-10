@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Key : MonoBehaviour
@@ -19,6 +20,7 @@ public class Key : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("kachink");
         isOpen = true;
         gameObject.SetActive(false);
         door.OpenDoor();
