@@ -21,8 +21,9 @@ public class Player : MonoBehaviour
     Vector2 player_position;
     Vector2 mouse_pixel_pos;
     Vector2 initial_position;
-    public Key class_key;
-    public bool isOpen = false;
+    public static bool isOpen = false;
+    GameObject dead_key;
+    Door door;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -88,6 +89,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        door = FindAnyObjectByType<Door>();
         if (collision.gameObject.CompareTag("hazard"))
         {
             Respawn();
@@ -101,8 +103,17 @@ public class Player : MonoBehaviour
             }
             if (isOpen)
             {
-                KeyRespawn();
+                isOpen = false;
+                dead_key.SetActive(true);
+                door.OpenDoor();
             }
+        }
+        if (collision.gameObject.CompareTag("key"))
+        {
+            isOpen = true;
+            dead_key = collision.gameObject;
+            dead_key.SetActive(false);
+            door.OpenDoor();
         }
     }
 
@@ -111,13 +122,4 @@ public class Player : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         transform.position = initial_position;
     }
-
-    void KeyRespawn()
-    {
-        isOpen = false;
-        class_key.isOpen = false;
-        class_key.GetComponent<SpriteRenderer>().enabled = true;
-        class_key.GetComponent<Collider2D>().enabled = true;
-    }
-
 }
