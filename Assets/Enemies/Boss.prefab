@@ -111,7 +111,7 @@ MonoBehaviour:
   speed: 4.5
   gravity: 0.008
   hit_speed: 3
-  health: 100
+  health: 1
   proj_speed: 3
   sp: {fileID: 0}
   bullet_pre: {fileID: 8519518444582026145, guid: 3a250622d38c6ab47a18b0bc6086e5ed, type: 3}
