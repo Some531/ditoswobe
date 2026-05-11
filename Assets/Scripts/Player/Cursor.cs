@@ -18,8 +18,12 @@ public class Cursor : MonoBehaviour
     void FixedUpdate()
     {
         if (play_character.is_grapple)
-        {
+        {   
+            Vector2 rel_pos = play_character.init_rel_position;
+
             transform.position = play_character.grapple_position;
+            
+            transform.rotation = Quaternion.FromToRotation(Vector2.up, rel_pos);
         }
 
         if (Mouse.current != null && Mouse.current.leftButton.isPressed && play_character.is_grapple)

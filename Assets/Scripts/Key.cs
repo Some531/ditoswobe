@@ -4,7 +4,6 @@ public class Key : MonoBehaviour
 {
     void Start()
     {
-        
     }
 
 }

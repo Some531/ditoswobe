@@ -117,11 +117,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 70
-        height: 64
+        y: 32
+        width: 42
+        height: 32
       alignment: 9
-      pivot: {x: 0.6571429, y: 0.5}
+      pivot: {x: 0.71428573, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,18 +140,18 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 70
-        height: 64
+        width: 42
+        height: 32
       alignment: 9
-      pivot: {x: 0.6571429, y: 0.5}
+      pivot: {x: 0.71428573, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f54522ba831c09b48a7afc12cb579035
-      internalID: 636614567
+      spriteID: eb261de4e30d1374e8aed6ba6a43b12c
+      internalID: -460053480
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b4734519a55019c4884d7635647212e8
+    spriteID: f095b88141fea234592d262d35d20d61
     internalID: 0
     vertices: []
     indices: 
@@ -169,11 +169,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":70.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6428571343421936,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":42.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.7142857313156128,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       door_0: -7341407202210888751
-      door_1: 636614567
+      door_1: -460053480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -31,7 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1694913177206695654, guid: 774bc37e1eb6b404daf3ba6ac63541cd, type: 3}
+  m_Sprite: {fileID: 1095141833252711340, guid: 6c2d1b439009c87408395b35b61c9a6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.875, y: 1.1875}
+    oldSize: {x: 1, y: 0.625}
     newSize: {x: 1.875, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4c055793d566a4691b0616d801b79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Key
-  isOpen: 0
 --- !u!50 &4342288995415748278
 Rigidbody2D:
   serializedVersion: 5

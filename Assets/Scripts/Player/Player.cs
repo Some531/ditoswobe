@@ -8,8 +8,11 @@ public class Player : MonoBehaviour
     [SerializeField] public Camera main_camera;
     RaycastHit2D grappleHit;  
     public Vector2 rel_position;
+    public Vector2 init_rel_position;
+    public bool prev_is_grapple = false;
     public Vector2 grapple_position;
     public bool is_grapple = false;
+    public bool is_first_hit = false;
     [SerializeField] LayerMask layerMask;
 
     public float thrust = 50f;
@@ -45,7 +48,6 @@ public class Player : MonoBehaviour
         
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-
             player_position = transform.position;
 
             mouse_pixel_pos = Mouse.current.position.ReadValue();
@@ -68,14 +70,28 @@ public class Player : MonoBehaviour
             }
         }
 
-        rel_position = new Vector2(grapple_position.x - player_position.x, grapple_position.y - player_position.y).normalized;
+        if (!(Mouse.current != null && Mouse.current.leftButton.isPressed))
+        {
+            is_grapple = false;
+        }
+
+        rel_position = new Vector2(grapple_position.x - player_position.x, grapple_position.y - player_position.y);
+
+        is_first_hit = !prev_is_grapple & is_grapple;
+
+        if (is_first_hit)
+        {
+            init_rel_position = rel_position;
+        }
+
+        prev_is_grapple = is_grapple;        
     }
 
     void FixedUpdate()
     {
-        if (Mouse.current != null && Mouse.current.leftButton.isPressed && grappleHit)
+        if (Mouse.current != null && Mouse.current.leftButton.isPressed && is_grapple)
         {
-            rb.AddForce(rel_position * thrust);
+            rb.AddForce(rel_position.normalized * thrust);
         }
     }
 
@@ -121,5 +137,8 @@ public class Player : MonoBehaviour
     {
         rb.linearVelocity = Vector2.zero;
         transform.position = initial_position;
+        rb.angularVelocity = 0;
+        transform.rotation = Quaternion.FromToRotation(Vector2.up, Vector2.up);
+        is_grapple = false;
     }
 }

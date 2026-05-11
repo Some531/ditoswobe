@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 286745151087113492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.625, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -130,14 +130,14 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6571429, y: 0.5}
-    oldSize: {x: 4.375, y: 4}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.71428573, y: 0.5}
+    oldSize: {x: 2.625, y: 2}
+    newSize: {x: 2.625, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 4}
+  m_Size: {x: 1.5, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &8717718179921799936
 MonoBehaviour:
@@ -152,4 +152,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DishDoor
   door_0: {fileID: -7341407202210888751, guid: b06fcb97c8425384f93622988ea8dcdb, type: 3}
-  door_1: {fileID: 636614567, guid: b06fcb97c8425384f93622988ea8dcdb, type: 3}
+  door_1: {fileID: -460053480, guid: b06fcb97c8425384f93622988ea8dcdb, type: 3}
+  obj_player: {fileID: 0}
